@@ -3,6 +3,7 @@
 import 'package:fashionapp/views/ApplyJob/filter_screen.dart';
 import 'package:fashionapp/views/ApplyJob/links_screen.dart';
 import 'package:fashionapp/views/celebrity/select_celebrity_screen.dart';
+import 'package:fashionapp/views/settings/edit_profile_screen.dart';
 import 'package:fashionapp/views/settings/post_job_screen.dart';
 import 'package:fashionapp/views/settings/profile_screen.dart';
 import 'package:fashionapp/views/settings/select_profile_category.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
           ),
-          home:  PostJobScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
+          home:  EditProfileScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
         );
 
 

@@ -1,5 +1,5 @@
 
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/login/real_login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 30.h,),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 30.w),
@@ -97,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 30.h,),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 30.w),
@@ -107,7 +107,7 @@ class SignUpScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 30.h,),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 30.w),
@@ -117,7 +117,7 @@ class SignUpScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 20.h,),
               CustomButton(    height: 59.h,
                 width: 344.w,text:"Create Account",),

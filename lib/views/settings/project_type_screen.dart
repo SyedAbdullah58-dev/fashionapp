@@ -1,15 +1,13 @@
-import 'package:fashionapp/controllers/celeb_profile_controller.dart';
-import 'package:fashionapp/views/settings/profile_screen.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/controllers/settings_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../utils/constants.dart';
-
-class SelectProfileCategory extends StatelessWidget {
- CelebProfileController celebProfileController=Get.put(CelebProfileController());
+class ProjectTypeScreen extends StatelessWidget {
+  SettingController settingController=Get.put(SettingController());
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class SelectProfileCategory extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               BackButton(onPressed: (){Get.back();},color: Colors.white,),
+                BackButton(onPressed: (){Get.back();},color: Colors.white,),
                 SizedBox(
                   width: 20.w,
                 ),
@@ -32,7 +30,7 @@ class SelectProfileCategory extends StatelessWidget {
                       width: 150.w,
                       height: 35.h,
                       child: Text(
-                        "Category",
+                        "Project Type",
                         style: GoogleFonts.poppins(
                             fontSize: 17.sp,
                             color: Colors.white,
@@ -102,60 +100,59 @@ class SelectProfileCategory extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    for (int i = 0; i < celebProfileController.categoryList.length; i++)
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 2.h,horizontal: 20.w),
-                        child: Row(
+                    for (int i = 0; i < settingController.categoryList.length; i++)
+                      GetBuilder<SettingController>(
+                        builder: (context) {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(vertical: 5.h,horizontal: 20.w),
+                            child: Row(
+                              children: [
+                                SizedBox(width: 7.w,),
+                                Text(settingController.categoryList[i].item,style: textStyle,),
+                                Expanded(child: Container()),
+                               !settingController.categoryList[i].isSelected? GestureDetector(
+                                 onTap: (){
+                                   if(!settingController.categoryList[i].isSelected){
+                                     settingController.categoryList[i].isSelected=true;
+                                     settingController.update();
+                                   }
+                                   else
+                                     {settingController.categoryList[i].isSelected=false;
+                                     settingController.update();}
+                                 },
+                                 child: Container(
+                                   alignment: Alignment.center,
+                                   height: 20.h,
+                                   width: 20.w,
+                                   decoration: BoxDecoration(
+                                     shape: BoxShape.circle,
+                                     color: Colors.white
+                                   ),
+                                   child: Container(   height: 15.h,
+    width: 15.w,
+    decoration: BoxDecoration(
+    shape: BoxShape.circle,
+    color: Colors.black)),
 
-                          children: [
+                                 ),
+                               ): Container(
+                                 alignment: Alignment.center,
+                                 height: 20.h,
+                                 width: 20.w,
+                                 decoration: BoxDecoration(
+                                     shape: BoxShape.circle,
 
-                            SizedBox(width: 7.w,),
-                            Text(celebProfileController.categoryList[i],style: textStyle,),
-                            Expanded(child: Container()),
-                            Theme(
+                                   gradient: LinearGradient(colors: gradientColor,begin: Alignment.topCenter,end: Alignment.bottomCenter)
+                                 ),
+                                 child: Icon(Icons.done,size: 15.r,color: Colors.white,),
 
-                              data: ThemeData(
+                               )
+                              ],),
 
-
-                              ),
-                              child:   Radio(
-                                  fillColor:
-                                  MaterialStateColor.resolveWith((states) => Colors.white,),
-                                  focusColor: Colors.white,
-
-                                  value: 1, groupValue: 0, onChanged: (value){}),
-                            )
-                          ],),
-
+                          );
+                        }
                       ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap:(){
 
-                            },
-                            child: Container(
-                                height: 25.h,
-                                alignment: Alignment.center,
-                                width: 83.w,
-                                decoration: BoxDecoration(
-                                    gradient:
-                                    LinearGradient(colors: gradientColor),
-                                    borderRadius: BorderRadius.circular(12.r)),
-                                child: Text(
-                                  "Other",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 12.sp,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: TextDecoration.none),
-                                )),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textform_field.dart';
 
@@ -79,7 +79,7 @@ class PhoneOTP extends StatelessWidget {
             children: [
               Text("Enter Phone Number",style: textStyle,),
               SizedBox(height: 5.h),
-              CustomTextFormFiled()
+              CustomTextFormField()
 
             ],),
           SizedBox(

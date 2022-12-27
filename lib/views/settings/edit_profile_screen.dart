@@ -1,4 +1,6 @@
 import 'package:fashionapp/views/settings/profile_description_screen.dart';
+import 'package:fashionapp/views/settings/project_type_screen.dart';
+import 'package:fashionapp/views/settings/select_profile_category.dart';
 import 'package:fashionapp/widgets/category_option.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 import '../../controllers/settings_controller.dart';
 import '../../widgets/option_button.dart';
 
@@ -85,10 +87,13 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 SizedBox(height:5.w ,),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.white,
-                  size: 20.r,
+                GestureDetector(
+                  onTap: (){Get.to(()=>SelectProfileCategory());},
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    size: 20.r,
+                  ),
                 )
               ],
             ),
@@ -201,10 +206,15 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 SizedBox(height:5.w ,),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.white,
-                  size: 20.r,
+                GestureDetector(
+                  onTap: (){
+                    Get.to(()=>ProjectTypeScreen());
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    size: 20.r,
+                  ),
                 )
               ],
             ),

@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/ApplyJob/applyjob_screen.dart';
 import 'package:fashionapp/views/settings/profile_setting_screen.dart';
 import 'package:fashionapp/widgets/profile_options.dart';

@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/splashscreens/second_splash_screen.dart';
 
 import 'package:flutter/material.dart';

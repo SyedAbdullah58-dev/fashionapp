@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_textform_field.dart';
 
@@ -85,7 +85,7 @@ class RealLogin extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 30.h,),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 30.w),
@@ -95,7 +95,7 @@ class RealLogin extends StatelessWidget {
                   ],
                 ),
               ),
-              CustomTextFormFiled(),
+              CustomTextFormField(),
               SizedBox(height: 200.h,),
 
 

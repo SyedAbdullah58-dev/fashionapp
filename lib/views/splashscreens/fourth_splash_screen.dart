@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/login/login_screen.dart';
 import 'package:fashionapp/views/splashscreens/Third_splash_screen.dart';
 import 'package:flutter/material.dart';

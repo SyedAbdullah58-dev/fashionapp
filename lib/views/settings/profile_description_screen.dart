@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 import '../../widgets/category_option.dart';
 
 class ProfileDescriptionScreen extends StatelessWidget {
@@ -34,7 +34,7 @@ class ProfileDescriptionScreen extends StatelessWidget {
                 Text("Description",style: textStyle,),
                 GestureDetector(
                   onTap: () {
-
+Get.back();
                   },
                   child: Icon(
                     Icons.done,

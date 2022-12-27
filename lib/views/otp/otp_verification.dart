@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/set_passsword_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

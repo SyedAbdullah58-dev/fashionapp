@@ -1,7 +1,7 @@
 import 'package:fashionapp/views/success_password.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -54,9 +54,9 @@ class SetPasswordScreen extends StatelessWidget {
           ),
 
 
-          CustomTextFormFiled(hinttext: "Enter new Password"),
+          CustomTextFormField(hinttext: "Enter new Password"),
           SizedBox(height: 30.h,),
-          CustomTextFormFiled(hinttext: "Confirm Password"),
+          CustomTextFormField(hinttext: "Confirm Password"),
           SizedBox(height: 80.h,),
           CustomButton(    height: 59.h,
               width: 344.w,text:"Continue",function: (){Get.to(SuccessPassword());}),

@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/controllers/job_apply_controller.dart';
 import 'package:fashionapp/home/Inbox_screen.dart';
 import 'package:fashionapp/widgets/custom_button.dart';

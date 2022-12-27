@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants.dart';
+import '../utils/constants.dart';
 import '../controllers/bottom_nav_bar_controller.dart';
 import '../controllers/toptrend_controller.dart';
 import '../widgets/custom_function_button.dart';

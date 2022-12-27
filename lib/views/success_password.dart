@@ -1,7 +1,7 @@
 import 'package:fashionapp/home/navbar_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

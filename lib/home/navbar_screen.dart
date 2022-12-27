@@ -1,4 +1,4 @@
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/home/home_screen.dart';
 import 'package:fashionapp/views/login/login_screen.dart';
 import 'package:flutter/cupertino.dart';

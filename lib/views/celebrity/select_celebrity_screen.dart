@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/controllers/job_apply_controller.dart';
 import 'package:fashionapp/widgets/new_feed_container.dart';
 import 'package:fashionapp/widgets/option_button.dart';

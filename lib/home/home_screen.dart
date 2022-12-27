@@ -1,9 +1,9 @@
-import 'package:fashionapp/constants.dart';
-import 'package:fashionapp/constants.dart';
-import 'package:fashionapp/constants.dart';
-import 'package:fashionapp/constants.dart';
-import 'package:fashionapp/constants.dart';
-import 'package:fashionapp/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/home/toptrending_screen.dart';
 import 'package:fashionapp/widgets/new_feed_container.dart';
 import 'package:fashionapp/widgets/profile_container.dart';
