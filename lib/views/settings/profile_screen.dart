@@ -1,5 +1,7 @@
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/ApplyJob/applyjob_screen.dart';
+import 'package:fashionapp/views/Friends/favourites_screen.dart';
+import 'package:fashionapp/views/Friends/friends_screen.dart';
 import 'package:fashionapp/views/settings/profile_setting_screen.dart';
 import 'package:fashionapp/widgets/profile_options.dart';
 import 'package:flutter/cupertino.dart';
@@ -111,32 +113,57 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.white,
                 size: 30.r,
               ),
-              onTap: (){Get.to(()=>ProfileSettingScreen());},
+              onTap: () {
+                Get.to(() => ProfileSettingScreen());
+              },
               optTitle: "Settings"),
           ProfileOptions(
-            onTap: (){Get.to(()=>ApplyJobScreen());},
+              onTap: () {
+                Get.to(() => ApplyJobScreen());
+              },
               optIcon: Icon(
                 Icons.location_on_outlined,
                 color: Colors.white,
                 size: 30.r,
-                
               ),
               optTitle: "Post job"),
           ProfileOptions(
-              optIcon:Icon(Icons.person_pin_outlined,color: Colors.white,size: 30.r,),
+              optIcon: Icon(
+                Icons.person_pin_outlined,
+                color: Colors.white,
+                size: 30.r,
+              ),
+              onTap: () {
+                Get.to(() => FriendsScreen());
 
+              },
               optTitle: "Friends"),
           ProfileOptions(
-              optIcon:Icon(Icons.shopping_cart_outlined,color: Colors.white,size: 30.r,),
+              optIcon: Icon(
+                Icons.shopping_cart_outlined,
+                color: Colors.white,
+                size: 30.r,
+              ),
+              optTitle: "Favourites",
+              onTap: () {
+    Get.to(() => FavouritesScreen());
 
-              optTitle: "Favourites"),
+    },
+          ),
+
           ProfileOptions(
-              optIcon:Icon(Icons.chat_outlined,color: Colors.white,size: 30.r,),
-
+              optIcon: Icon(
+                Icons.chat_outlined,
+                color: Colors.white,
+                size: 30.r,
+              ),
               optTitle: "Chat and helps"),
           ProfileOptions(
-              optIcon:Icon(Icons.logout,color: Colors.white,size: 30.r,),
-
+              optIcon: Icon(
+                Icons.logout,
+                color: Colors.white,
+                size: 30.r,
+              ),
               optTitle: "Logout"),
         ],
       ),

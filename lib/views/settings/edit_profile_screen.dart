@@ -1,3 +1,4 @@
+import 'package:fashionapp/views/settings/Links_Screen.dart';
 import 'package:fashionapp/views/settings/profile_description_screen.dart';
 import 'package:fashionapp/views/settings/project_type_screen.dart';
 import 'package:fashionapp/views/settings/select_profile_category.dart';
@@ -37,20 +38,16 @@ class EditProfileScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   child: Icon(
                     Icons.done,
                     size: 29.r,
                     color: Colors.white,
                   ),
                 ),
-
               ],
             ),
           ),
-
           SizedBox(
             height: 30.h,
           ),
@@ -78,7 +75,6 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 Expanded(child: Container()),
-
                 Text(
                   "None",
                   style: GoogleFonts.poppins(
@@ -86,9 +82,13 @@ class EditProfileScreen extends StatelessWidget {
                       color: Colors.white,
                       decoration: TextDecoration.none),
                 ),
-                SizedBox(height:5.w ,),
+                SizedBox(
+                  height: 5.w,
+                ),
                 GestureDetector(
-                  onTap: (){Get.to(()=>SelectProfileCategory());},
+                  onTap: () {
+                    Get.to(() => SelectProfileCategory());
+                  },
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.white,
@@ -107,7 +107,6 @@ class EditProfileScreen extends StatelessWidget {
                 CategoryOption(title: "Education"),
                 CategoryOption(title: "Gamer"),
                 CategoryOption(title: "Writer"),
-
               ],
             ),
           ),
@@ -119,31 +118,36 @@ class EditProfileScreen extends StatelessWidget {
                 CategoryOption(title: "Photographer"),
                 CategoryOption(title: "Community"),
                 CategoryOption(title: "Video Creator"),
-
-
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "See More",
-                style: GoogleFonts.poppins(
-                    fontSize: 16.sp,
+          GestureDetector(
+            onTap: () {
+              Get.to(() => SelectProfileCategory());
+            },
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "See More",
+                    style: GoogleFonts.poppins(
+                        fontSize: 16.sp,
+                        color: Colors.white,
+                        decoration: TextDecoration.none),
+                  ),
+                  SizedBox(height: 5.w),
+                  Icon(
+                    Icons.arrow_forward_ios,
                     color: Colors.white,
-                    decoration: TextDecoration.none),
+                    size: 20.r,
+                  ),
+                ],
               ),
-              SizedBox(height:5.w ),
-              Icon(
-                Icons.arrow_forward_ios,
-                color: Colors.white,
-                size: 20.r,
-              ),
-            ],
+            ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Row(
               children: [
                 Text(
@@ -154,39 +158,42 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 Expanded(child: Container()),
-
-               GestureDetector(
-                 onTap: (){
-                   Get.to(()=>ProfileDescriptionScreen());
-                 },
-                 child: Row(
-                   children: [
-                     Icon(   Icons.edit,
-                       color: Colors.white,
-                       size: 20.r,),
-                      SizedBox(width:10.w ,),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => ProfileDescriptionScreen());
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                        size: 20.r,
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
                       Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.white,
                         size: 20.r,
                       ),
-                   ],
-                 ),
-               )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
-    Container(
-    height: 152.h,
-    width: 329.w,
-    child: Text(OverContent,
-    style: GoogleFonts.poppins(
-    fontSize: 11.sp,
-    color: Colors.white,
-    wordSpacing: 1.sp,
-    decoration: TextDecoration.none))),
+          Container(
+              height: 152.h,
+              width: 329.w,
+              child: Text(OverContent,
+                  style: GoogleFonts.poppins(
+                      fontSize: 11.sp,
+                      color: Colors.white,
+                      wordSpacing: 1.sp,
+                      decoration: TextDecoration.none))),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Row(
               children: [
                 Text(
@@ -197,23 +204,30 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 Expanded(child: Container()),
-
-                Text(
-                  "None",
-                  style: GoogleFonts.poppins(
-                      fontSize: 16.sp,
-                      color: Colors.white,
-                      decoration: TextDecoration.none),
-                ),
-                SizedBox(height:5.w ,),
                 GestureDetector(
-                  onTap: (){
-                    Get.to(()=>ProjectTypeScreen());
-                  },
-                  child: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                    size: 20.r,
+                    onTap: () {
+                      Get.to(() => ProjectTypeScreen());
+                    },
+                  child: Container(
+                    child: Row(
+                      children: [
+                        Text(
+                          "None",
+                          style: GoogleFonts.poppins(
+                              fontSize: 16.sp,
+                              color: Colors.white,
+                              decoration: TextDecoration.none),
+                        ),
+                        SizedBox(
+                          height: 5.w,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                          size: 20.r,
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -228,8 +242,6 @@ class EditProfileScreen extends StatelessWidget {
                 CategoryOption(title: "Film"),
                 CategoryOption(title: "Song"),
                 CategoryOption(title: "Show"),
-
-
               ],
             ),
           ),
@@ -243,7 +255,7 @@ class EditProfileScreen extends StatelessWidget {
                     color: Colors.white,
                     decoration: TextDecoration.none),
               ),
-              SizedBox(height:5.w ),
+              SizedBox(height: 5.w),
               Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.white,
@@ -252,7 +264,7 @@ class EditProfileScreen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             child: Row(
               children: [
                 Text(
@@ -263,7 +275,6 @@ class EditProfileScreen extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
                 Expanded(child: Container()),
-
                 Text(
                   "None",
                   style: GoogleFonts.poppins(
@@ -271,19 +282,24 @@ class EditProfileScreen extends StatelessWidget {
                       color: Colors.white,
                       decoration: TextDecoration.none),
                 ),
-                SizedBox(height:5.w ,),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.white,
-                  size: 20.r,
+                SizedBox(
+                  height: 5.w,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => LinksScreen());
+                  },
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                    size: 20.r,
+                  ),
                 )
               ],
             ),
           ),
-
         ],
       ),
-
     );
   }
 }

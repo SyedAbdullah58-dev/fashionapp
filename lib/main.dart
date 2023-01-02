@@ -1,8 +1,10 @@
 
 
+import 'package:fashionapp/home/chat_screen.dart';
 import 'package:fashionapp/views/ApplyJob/filter_screen.dart';
 import 'package:fashionapp/views/ApplyJob/links_screen.dart';
 import 'package:fashionapp/views/celebrity/select_celebrity_screen.dart';
+import 'package:fashionapp/views/settings/change_password_screen.dart';
 import 'package:fashionapp/views/settings/edit_profile_screen.dart';
 import 'package:fashionapp/views/settings/post_job_screen.dart';
 import 'package:fashionapp/views/settings/profile_screen.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
           ),
-          home:  EditProfileScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
+          home:  ChangePasswordScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
         );
 
 

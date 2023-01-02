@@ -62,7 +62,7 @@ class SignUpScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                child:Icon(Icons.facebook_outlined,color: Colors.white,)),
+                child:Icon(Icons.facebook_outlined,color: Colors.white,size: 20.r,)),
             SizedBox(width: 20.w,),
             Container(
                 alignment: Alignment.center,
@@ -71,7 +71,7 @@ class SignUpScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                child:Icon(Icons.g_mobiledata_outlined,color: Colors.white,)),
+                child:ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 20.r,)),
           ],),
           SizedBox(
             height: 30.h,

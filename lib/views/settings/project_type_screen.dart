@@ -152,12 +152,101 @@ class ProjectTypeScreen extends StatelessWidget {
                           );
                         }
                       ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 5.h),
+                      child: Row(
+                        children: [
+                          Text("Show more..",style: textStyle,),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                      child: Container(
+                          height: 222.h,
+                          width: 358.w,
+                          child: Column(
+                            children: [
+                              Stack(
+                                alignment: Alignment.topRight,
+                                children: [
+                                  Container(
+                                    height: 161.h,
+                                    width: 358.w,
+                                    decoration: BoxDecoration(image: DecorationImage(
+                                        image: AssetImage("assets/prof_desc.png"),fit: BoxFit.fill
+
+                                    )),
+                                  ),
+                                  Positioned(
+                                      right: 10.w,
+                                      top: 5.h,
+                                      child: Icon(Icons.cancel,color: Colors.white,size: 20.r,))
+                                ],
+                              ),
+                              SizedBox(height: 5.h,),
+                              Row(
+                                children: [
+
+                                  Text("hello this is a sample",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 11.sp,
+                                          color: Colors.white,
+                                          wordSpacing: 1.sp,
+                                          decoration: TextDecoration.none)),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                      child: Container(
+                          height: 222.h,
+                          width: 358.w,
+                          child: Column(
+                            children: [
+                              Stack(
+                                alignment: Alignment.topRight,
+                                children: [
+                                  Container(
+                                    height: 161.h,
+                                    width: 358.w,
+                                    decoration: BoxDecoration(image: DecorationImage(
+                                        image: AssetImage("assets/prof_desc.png"),fit: BoxFit.fill
+
+                                    )),
+                                  ),
+                                  Positioned(
+                                      right: 10.w,
+                                      top: 5.h,
+                                      child: Icon(Icons.cancel,color: Colors.white,size: 20.r,))
+                                ],
+                              ),
+                              SizedBox(height: 5.h,),
+                              Row(
+                                children: [
+
+                                  Text("hello this is a sample",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 11.sp,
+                                          color: Colors.white,
+                                          wordSpacing: 1.sp,
+                                          decoration: TextDecoration.none)),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ),
+
 
                   ],
                 ),
               ),
             ),
           ),
+
+
         ]));
   }
 }
