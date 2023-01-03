@@ -1,4 +1,5 @@
 import 'package:fashionapp/utils/constants.dart';
+import 'package:fashionapp/views/settings/reset_password_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,7 +64,7 @@ class ChangePasswordScreen extends StatelessWidget {
 
               children: [
                 Text(
-                  "Dark Mood",
+                  "Remember Me",
                   style: GoogleFonts.poppins(
                       fontSize: 16.sp,
                       color: Colors.white,
@@ -85,14 +86,19 @@ class ChangePasswordScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 240.h,),
-          Container(
-            alignment: Alignment.center,
-            height: 49.h,width: 319.w,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r)
-          ,color: Color(0xff282828),
-          ),
-            child: Text("Change Password",style: textStyle,),
+          GestureDetector(
+            onTap: (){
+              Get.to (()=>ResetPasswordScreen() );
+            },
+            child: Container(
+              alignment: Alignment.center,
+              height: 49.h,width: 319.w,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r)
+            ,color: Color(0xff282828),
+            ),
+              child: Text("Change Password",style: textStyle,),
 
+            ),
           )
         ],
 

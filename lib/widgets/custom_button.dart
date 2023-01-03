@@ -6,7 +6,7 @@ import '../utils/constants.dart';
 
 
 
-Widget CustomButton({height, width, text, function}){
+Widget CustomButton({height, width, text, function,radius}){
     return InkWell(
       onTap: function,
       child: Container(
@@ -14,7 +14,7 @@ Widget CustomButton({height, width, text, function}){
           height: 51.h,
           width: 289.w,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
+              borderRadius: BorderRadius.circular(radius==null?10.r:radius),
               gradient: LinearGradient(
                   colors: gradientColor,
                   begin: Alignment.topCenter,
