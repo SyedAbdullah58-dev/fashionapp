@@ -1,3 +1,4 @@
+import 'package:fashionapp/views/settings/password_success_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,10 +42,12 @@ class ConfirmPasswordScreen extends StatelessWidget {
           SizedBox(height: 50.h,),
           Container(
               height: 59.h,width: 59.w,
-              decoration: BoxDecoration(shape: BoxShape.circle,border:Border.all(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,border:Border.all(
                   color: Colors.white,width: 3.r
               )),
-              child: Icon(Icons.question_mark,size: 40.r,color: Colors.white,)),
+              child: Icon(Icons.lock,size: 40.r,color: Colors.black,)),
 
           SizedBox(height: 73.h),
           Text(
@@ -70,13 +73,13 @@ class ConfirmPasswordScreen extends StatelessWidget {
 
 
           SizedBox(height: 40.h,),
-          CustomTextFormField(text: "four Digit Code"),
+          CustomTextFormField(text: "Four Digit Code"),
           SizedBox(height: 10.h,),
           CustomTextFormField(text: "New Password"),
           SizedBox(height: 10.h,),
           CustomTextFormField(text: "Confirm Password"),
           SizedBox(height: 150.h,),
-          CustomButton(text: "Continue",radius: 30.r,function: (){Get.to(()=>ConfirmPasswordScreen());})
+          CustomButton(text: "Continue",radius: 30.r,function: (){Get.to(()=>PasswordSuccessScreen());})
         ],
 
 

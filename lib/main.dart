@@ -8,6 +8,7 @@ import 'package:fashionapp/views/settings/change_password_screen.dart';
 import 'package:fashionapp/views/settings/edit_profile_screen.dart';
 import 'package:fashionapp/views/settings/post_job_screen.dart';
 import 'package:fashionapp/views/settings/profile_screen.dart';
+import 'package:fashionapp/views/settings/profile_setting_screen.dart';
 import 'package:fashionapp/views/settings/select_profile_category.dart';
 import 'package:fashionapp/views/splashscreens/splash_screen.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
           ),
-          home:  ChangePasswordScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
+          home:  EditProfileScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
         );
 
 
