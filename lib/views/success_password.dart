@@ -43,7 +43,7 @@ class SuccessPassword extends StatelessWidget {
 
 
       Text(
-        "login Successful",
+        "Login Successful!",
         style: GoogleFonts.poppins(
             fontSize: 18.sp,
             fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class SuccessPassword extends StatelessWidget {
             decoration: TextDecoration.none),
       ),
       Text(
-        "Enjoy your day",
+        "Enjoy Your Time",
         style: GoogleFonts.poppins(
             fontSize: 14.sp,
 

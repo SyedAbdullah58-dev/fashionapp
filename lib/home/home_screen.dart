@@ -1,3 +1,5 @@
+import 'package:fashionapp/controllers/toptrend_controller.dart';
+import 'package:fashionapp/home/notification_screen.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/utils/constants.dart';
@@ -54,9 +56,12 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15.r)),
                     child: TextField(
-                      style: TextStyle(fontSize: 14.sp,),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.sp,
+                          decoration: TextDecoration.none),
                       decoration: InputDecoration(
-                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
                           hintText: "Search",
                           prefixIcon: Icon(
                             Icons.search,
@@ -68,7 +73,9 @@ class HomeScreen extends StatelessWidget {
                     width: 20.w,
                   ),
                   InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => NotificationScreen());
+                      },
                       child: ImageIcon(
                         AssetImage("assets/bell.png"),
                         size: 29.r,
@@ -92,13 +99,18 @@ class HomeScreen extends StatelessWidget {
                         decoration: TextDecoration.none),
                   ),
                   Expanded(child: Container()),
-                  Text(
-                    "See More",
-                    style: GoogleFonts.poppins(
-                        fontSize: 12.sp,
-                        color: Colors.white,
-                        wordSpacing: 1.sp,
-                        decoration: TextDecoration.none),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => TopTrendingScreen());
+                    },
+                    child: Text(
+                      "See More",
+                      style: GoogleFonts.poppins(
+                          fontSize: 12.sp,
+                          color: Colors.white,
+                          wordSpacing: 1.sp,
+                          decoration: TextDecoration.none),
+                    ),
                   ),
                 ],
               ),
@@ -113,31 +125,33 @@ class HomeScreen extends StatelessWidget {
                       likes: "23",
                       dislikes: "34",
                       image: "assets/image1.png",
-                      function: (){Get.to(TopTrendingScreen());},
+                      function: () {
+                        Get.to(TopTrendingScreen());
+                      },
                     ),
                     customHomeContainer(
                       likes: "23",
                       dislikes: "34",
                       image: "assets/image2.png",
-                      function: (){},
+                      function: () {},
                     ),
                     customHomeContainer(
                       likes: "23",
                       dislikes: "34",
                       image: "assets/image3.png",
-                      function: (){},
+                      function: () {},
                     ),
                     customHomeContainer(
                       likes: "23",
                       dislikes: "34",
                       image: "assets/image4.png",
-                      function: (){},
+                      function: () {},
                     ),
                     customHomeContainer(
                       likes: "23",
                       dislikes: "34",
                       image: "assets/image4.png",
-                      function: (){},
+                      function: () {},
                     ),
                   ],
                 ),
@@ -189,30 +203,54 @@ class HomeScreen extends StatelessWidget {
                         decoration: TextDecoration.none),
                   ),
                   Expanded(child: Container()),
-                  Container(
-                    height: 24.h,
-                    width: 95.w,
-                    alignment: Alignment.center,
-                    child: Row(
-
-                      children: [
-                    ImageIcon(AssetImage("assets/heart.png"),color: Color(0xffEA2E05),size: 30.r,),
-                      SizedBox(width: 5.w,),
-                      Text("Follow",style: GoogleFonts.poppins(
-                          fontSize: 14.sp,
-                          color: Colors.white60,
-
-                          wordSpacing: 1.sp,
-                          decoration: TextDecoration.none),),
-
-                    ],),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(color: Colors.white),
-                        color: Colors.black),
-                    
-                  )
-                  
+                  GetBuilder<HomeScreenController>(builder: (context) {
+                    return GestureDetector(
+                      onTap: () {
+                        if (!homeScreenController.mainFollowButton) {
+                          homeScreenController.mainFollowButton = true;
+                          homeScreenController.update();
+                        } else {
+                          homeScreenController.mainFollowButton = false;
+                          homeScreenController.update();
+                        }
+                      },
+                      child: Container(
+                        height: 24.h,
+                        width: 95.w,
+                        alignment: Alignment.center,
+                        child: Row(
+                          children: [
+                            homeScreenController.mainFollowButton
+                                ? ImageIcon(
+                                    AssetImage("assets/filledheart.png"),
+                                    color: Color(0xffEA2E05),
+                                    size: 30.r,
+                                  )
+                                : ImageIcon(
+                                    AssetImage("assets/heart.png"),
+                                    color: Color(0xffEA2E05),
+                                    size: 30.r,
+                                  ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "Follow",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14.sp,
+                                  color: Colors.white60,
+                                  wordSpacing: 1.sp,
+                                  decoration: TextDecoration.none),
+                            ),
+                          ],
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(color: Colors.white),
+                            color: Colors.black),
+                      ),
+                    );
+                  })
                 ],
               ),
             ),
@@ -222,10 +260,11 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Column(
                   children: [
-                NewFeedContainer(image: "assets/profile1.png",
-                  width: 356.w,
-                  height: 325.h,
-                ),
+                    NewFeedContainer(
+                      image: "assets/profile1.png",
+                      width: 356.w,
+                      height: 325.h,
+                    ),
                   ],
                 ),
               ),

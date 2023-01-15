@@ -66,7 +66,7 @@ toptrendController.update();
                    builder: (context) {
                      return toptrendController.commentController.text!=""?GestureDetector(
                        onTap: (){
-                         var newComment=SingleComment(userName: "Syed Abdullah",userComment:toptrendController.commentController.text);
+                         var newComment=SingleComment(userName: "Anna",userComment:toptrendController.commentController.text);
                          toptrendController.commentList.add(newComment);
                          toptrendController.commentController.clear();
                          toptrendController.update();

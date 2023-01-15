@@ -1,6 +1,7 @@
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/home/home_screen.dart';
 import 'package:fashionapp/views/login/login_screen.dart';
+import 'package:fashionapp/views/settings/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,7 @@ class NavbarScreen extends StatelessWidget {
       HomeScreen(),
       HomeScreen(),
       HomeScreen(),
-      HomeScreen(),
+    ProfileScreen(),
       // FavouritesScreen(),
     ];
 

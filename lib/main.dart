@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
           ),
-          home:  EditProfileScreen()// SplashScreen()//FilterScreen()//ApplyJobScreen()
+          home:   SplashScreen()//FilterScreen()//ApplyJobScreen()
         );
 
 

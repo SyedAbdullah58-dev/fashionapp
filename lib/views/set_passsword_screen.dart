@@ -41,22 +41,26 @@ class SetPasswordScreen extends StatelessWidget {
           ),
           SizedBox(height: 45.h,),
           Padding(
-            padding: EdgeInsets.only(right: 70.w),
-            child: Text(
-              "NEW \n PASSWORD",
-              style: GoogleFonts.poppins(
-                  fontSize: 34.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  wordSpacing: 1.sp,
-                  decoration: TextDecoration.none),
+            padding: EdgeInsets.only(left: 40.w),
+            child: Row(
+              children: [
+                Text(
+                  "NEW \n PASSWORD",
+                  style: GoogleFonts.poppins(
+                      fontSize: 25.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      wordSpacing: 1.sp,
+                      decoration: TextDecoration.none),
+                ),
+              ],
             ),
           ),
-
+SizedBox(height: 20.h,),
 
           CustomTextFormField(hinttext: "Enter new Password"),
           SizedBox(height: 30.h,),
-          CustomTextFormField(hinttext: "Confirm Password"),
+          CustomTextFormField(hinttext: "Confirm Password",obscureText: true),
           SizedBox(height: 80.h,),
           CustomButton(    height: 59.h,
               width: 344.w,text:"Continue",function: (){Get.to(SuccessPassword());}),

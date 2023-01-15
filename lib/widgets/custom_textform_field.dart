@@ -49,7 +49,7 @@ Widget CustomTextFormField({
               fontSize: 18.sp,
               color: Colors.grey,
             ),
-            hintText: text,
+            hintText: hinttext,
             border: InputBorder.none,
           ),
         ),

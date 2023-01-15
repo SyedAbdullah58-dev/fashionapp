@@ -1,3 +1,4 @@
+import 'package:fashionapp/home/navbar_screen.dart';
 import 'package:fashionapp/views/login/signup_screen.dart';
 
 import 'package:fashionapp/widgets/custom_button.dart';
@@ -103,7 +104,7 @@ Theme(
                   }),
               SizedBox(height: 20.h,),
               CustomButton(    height: 51.h,
-                width: 289.w,text:"Continue Without Login",),
+                width: 289.w,text:"Continue Without Login",function: ()=>{Get.to(()=>NavbarScreen())}),
 
 
             ],

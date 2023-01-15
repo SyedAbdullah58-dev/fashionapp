@@ -1,6 +1,7 @@
 
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/login/real_login.dart';
+import 'package:fashionapp/views/otp/select_otp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,7 +72,9 @@ class SignUpScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                child:ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 20.r,)),
+                child:Transform.scale(
+                    scale: 1.2,
+                    child: ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 50.r,))),
           ],),
           SizedBox(
             height: 30.h,
@@ -120,7 +123,7 @@ class SignUpScreen extends StatelessWidget {
               CustomTextFormField(),
               SizedBox(height: 20.h,),
               CustomButton(    height: 59.h,
-                width: 344.w,text:"Create Account",),
+                width: 344.w,text:"Create Account",function: (){Get.to(()=>SelectOtp());}),
 SizedBox(height: 20.h,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

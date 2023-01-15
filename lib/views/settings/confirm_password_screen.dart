@@ -62,7 +62,7 @@ class ConfirmPasswordScreen extends StatelessWidget {
           Container(
             width: 303.w,
             child: Text(
-              "We have sent a four digit cofe on your phone/email",
+              "We have sent a four digit code on your phone/email",
               style: GoogleFonts.poppins(
                   fontSize: 14.sp,
                   color: Colors.white,

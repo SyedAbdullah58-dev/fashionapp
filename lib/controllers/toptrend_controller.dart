@@ -21,4 +21,5 @@ class TopTrendController extends GetxController {
     SingleComment(userName: "Anna Marie", userComment: "nice pic"),
   ];
 var picker;
+
 }

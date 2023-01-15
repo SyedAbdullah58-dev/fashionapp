@@ -90,7 +90,7 @@ class SelectOtp extends StatelessWidget {
               Get.back();
 
             },
-            child: Text("back to login",style:GoogleFonts.poppins(
+            child: Text("Back To Login",style:GoogleFonts.poppins(
                 fontSize: 16.sp,
                 color: dullTextColor,
 
@@ -99,7 +99,7 @@ class SelectOtp extends StatelessWidget {
           ),
           SizedBox(height: 149.h,),
           CustomButton(    height: 59.h,
-              width: 344.w,text:"Continue",function: (){}),
+              width: 344.w,text:"Continue",function: (){Get.to(()=>EmailOTP());}),
           SizedBox(height: 20.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

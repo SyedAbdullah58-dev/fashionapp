@@ -1,3 +1,4 @@
+import 'package:fashionapp/views/otp/otp_verification.dart';
 import 'package:fashionapp/widgets/custom_textform_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,10 @@ class EmailOTP extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                  child:ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 20.r,)),
+                  child:              Transform.scale(
+    scale: 1.2,
+    child: ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 50.r,))
+    ),
             ],),
           SizedBox(
             height: 149.h,
@@ -90,7 +94,7 @@ CustomTextFormField()
               Get.back();
 
             },
-            child: Text("back to login",style:GoogleFonts.poppins(
+            child: Text("Back To Login",style:GoogleFonts.poppins(
                 fontSize: 16.sp,
                 color: dullTextColor,
 
@@ -99,7 +103,7 @@ CustomTextFormField()
           ),
           SizedBox(height: 149.h,),
           CustomButton(    height: 59.h,
-              width: 344.w,text:"Send",function: (){}),
+              width: 344.w,text:"Send",function: (){Get.to(()=>OTPVerification());}),
           SizedBox(height: 20.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

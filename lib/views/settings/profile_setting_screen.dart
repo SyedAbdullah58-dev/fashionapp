@@ -88,7 +88,7 @@ class ProfileSettingScreen extends StatelessWidget {
             )
           ],
         ),
-        minHeight: 10.h,
+        minHeight: 0.h,
         maxHeight: 276.h,
         body: Column(
           children: [
@@ -243,7 +243,7 @@ class ProfileSettingScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Dark Mood",
+                            "Dark Mode",
                             style: GoogleFonts.poppins(
                                 fontSize: 14.sp,
                                 color: Colors.white,

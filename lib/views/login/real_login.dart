@@ -69,7 +69,9 @@ class RealLogin extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                  child:ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 30.r,)),
+                  child:Transform.scale(
+                      scale: 1.2,
+                      child: ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 50.r,))),
             ],),
           SizedBox(
             height: 30.h,
@@ -100,17 +102,22 @@ class RealLogin extends StatelessWidget {
 
 
               CustomButton(    height: 59.h,
-                width: 344.w,text:"login",function: (){Get.to(SelectOtp());}),
+                width: 344.w,text:"Login",function: (){Get.to(SelectOtp());}),
               SizedBox(height: 20.h,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Forgot Password?",style:  GoogleFonts.poppins(
-                      fontSize: 14.sp,
-                      color: dullTextColor,
-                      fontWeight: FontWeight.bold,
-                      wordSpacing: 1.sp,
-                      decoration: TextDecoration.none),),
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(()=>SelectOtp());
+                    },
+                    child: Text("Forgot Password?",style:  GoogleFonts.poppins(
+                        fontSize: 14.sp,
+                        color: dullTextColor,
+                        fontWeight: FontWeight.bold,
+                        wordSpacing: 1.sp,
+                        decoration: TextDecoration.none),),
+                  ),
 
                 ],
               ),

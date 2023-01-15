@@ -69,7 +69,10 @@ class PhoneOTP extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: greyColor,
                     borderRadius: BorderRadius.circular(10.r),),
-                  child:ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 20.r,)),
+                  child:              Transform.scale(
+    scale: 1.2,
+    child: ImageIcon(AssetImage("assets/google.png"),color: Colors.white,size: 50.r,))
+    ),
             ],),
           SizedBox(
             height: 149.h,
@@ -91,7 +94,7 @@ class PhoneOTP extends StatelessWidget {
               Get.back();
 
             },
-            child: Text("back to login",style:GoogleFonts.poppins(
+            child: Text("Back To Login",style:GoogleFonts.poppins(
                 fontSize: 16.sp,
                 color: dullTextColor,
 
