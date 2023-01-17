@@ -1,5 +1,5 @@
 import 'package:fashionapp/utils/constants.dart';
-import 'package:fashionapp/views/login/login_screen.dart';
+import 'package:fashionapp/views/login/onboarding_screen.dart';
 import 'package:fashionapp/views/splashscreens/Third_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,7 +52,7 @@ class FourthSplashScreen extends StatelessWidget {
                 SizedBox(height: 50.h,),
 
                 FloatingActionButton(onPressed: (){
-                  Get.offAll(LoginScreen());
+                  Get.offAll(OnboardingScreen());
                  },child: Container(
                   width: 60,
                   height: 60,

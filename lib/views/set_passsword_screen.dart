@@ -45,7 +45,7 @@ class SetPasswordScreen extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "NEW \n PASSWORD",
+                  "NEW \nPASSWORD",
                   style: GoogleFonts.poppins(
                       fontSize: 25.sp,
                       fontWeight: FontWeight.bold,

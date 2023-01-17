@@ -82,7 +82,7 @@ class EmailOTP extends StatelessWidget {
             children: [
               Text("Enter Email Address",style: textStyle,),
 SizedBox(height: 5.h),
-CustomTextFormField()
+CustomTextFormField(hinttext: "ratan@gmail.com")
 
             ],),
           SizedBox(
@@ -117,6 +117,7 @@ CustomTextFormField()
 
             ],
           ),
+          SizedBox(height: 10.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

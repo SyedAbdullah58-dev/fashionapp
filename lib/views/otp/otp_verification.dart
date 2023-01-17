@@ -40,15 +40,19 @@ class OTPVerification extends StatelessWidget {
           Text(
             "OTP VERIFICATION",
             style: GoogleFonts.poppins(
-                fontSize: 24.sp,
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 wordSpacing: 1.sp,
                 decoration: TextDecoration.none),
           ),
+          SizedBox(height: 10.h,),
           Text(
             "Enter the OTP sent to - +92-9483948384",
-            style: textStyle,
+            style: GoogleFonts.poppins(
+              fontSize: 16.sp,
+              color: Colors.white60,
+              decoration: TextDecoration.none),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -156,14 +160,24 @@ color: Colors.white,
               wordSpacing: 1.sp,
               decoration: TextDecoration.none),),
           SizedBox(height: 25.h,),
-          Text("Didn't receive code? Re-send",style: GoogleFonts.poppins(
-              fontSize: 17.sp,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Didn't receive code? ",style: GoogleFonts.poppins(
+                  fontSize: 17.sp,
 color: Colors.white,
-              wordSpacing: 1.sp,
-              decoration: TextDecoration.none),),
+                  wordSpacing: 1.sp,
+                  decoration: TextDecoration.none),),
+              Text("Re-send",style: GoogleFonts.poppins(
+                  fontSize: 17.sp,
+color: Colors.white60,
+                  wordSpacing: 1.sp,
+                  decoration: TextDecoration.none),),
+            ],
+          ),
           SizedBox(height: 45.h,),
           CustomButton(    height: 59.h,
-              width: 344.w,text:"Continue",function: (){Get.to(SetPasswordScreen());}),
+              width: 344.w,text:"Submit",function: (){Get.to(SetPasswordScreen());}),
 
         ],
       ),

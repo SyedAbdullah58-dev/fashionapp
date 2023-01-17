@@ -1,6 +1,7 @@
+import 'package:fashionapp/controllers/login_signup_controller.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/home/home_screen.dart';
-import 'package:fashionapp/views/login/login_screen.dart';
+import 'package:fashionapp/views/login/onboarding_screen.dart';
 import 'package:fashionapp/views/settings/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class NavbarScreen extends StatelessWidget {
       HomeScreen(),
       HomeScreen(),
       HomeScreen(),
-    ProfileScreen(),
+ HomeScreen(),
       // FavouritesScreen(),
     ];
 

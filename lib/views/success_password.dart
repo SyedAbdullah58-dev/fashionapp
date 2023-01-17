@@ -51,6 +51,7 @@ class SuccessPassword extends StatelessWidget {
             wordSpacing: 1.sp,
             decoration: TextDecoration.none),
       ),
+      SizedBox(height: 10.h,),
       Text(
         "Enjoy Your Time",
         style: GoogleFonts.poppins(

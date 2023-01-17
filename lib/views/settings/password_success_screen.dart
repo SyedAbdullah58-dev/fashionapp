@@ -1,4 +1,4 @@
-import 'package:fashionapp/views/login/real_login.dart';
+import 'package:fashionapp/views/login/Login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,7 +78,7 @@ class PasswordSuccessScreen extends StatelessWidget {
           ),
           SizedBox(height: 250.h,),
 
-          CustomButton(text: "Login",radius: 30.r,function: (){Get.to(()=>RealLogin());})
+          CustomButton(text: "Login",radius: 30.r,function: (){Get.to(()=>LoginScreen());})
         ],
 
 

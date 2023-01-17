@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Widget CustomTextFormField({
   text = '',
   controller,
-
+errorText,
   keyboardType = TextInputType.text,
   obscureText = false,
   hinttext=""
@@ -34,6 +34,7 @@ Widget CustomTextFormField({
           ),
           decoration: InputDecoration(
 //helperText: hinttext,
+          errorText: errorText,
             focusColor: Colors.black,
 
             focusedBorder:OutlineInputBorder(

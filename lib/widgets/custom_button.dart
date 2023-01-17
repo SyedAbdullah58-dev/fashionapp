@@ -11,8 +11,8 @@ Widget CustomButton({height, width, text, function,radius}){
       onTap: function,
       child: Container(
           alignment: Alignment.center,
-          height: 51.h,
-          width: 289.w,
+          height: height!=null?height:51.h,
+          width:width!=null? width:289.w,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(radius==null?10.r:radius),
               gradient: LinearGradient(

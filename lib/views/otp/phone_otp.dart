@@ -82,7 +82,7 @@ class PhoneOTP extends StatelessWidget {
             children: [
               Text("Enter Phone Number",style: textStyle,),
               SizedBox(height: 5.h),
-              CustomTextFormField()
+              CustomTextFormField(hinttext: "+9230454532")
 
             ],),
           SizedBox(

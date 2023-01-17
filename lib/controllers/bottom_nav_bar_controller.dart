@@ -1,6 +1,6 @@
 
 
-import 'package:fashionapp/views/login/login_screen.dart';
+import 'package:fashionapp/views/login/onboarding_screen.dart';
 import 'package:get/get.dart';
 
 
@@ -12,7 +12,7 @@ final currentIndex = 0.obs;
 
   List pages = [
 
-LoginScreen()
+OnboardingScreen()
   ];
 
    get currentPage => pages[currentIndex.value];
