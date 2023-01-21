@@ -8,7 +8,7 @@ import '../widgets/single_comment.dart';
 
 class TopTrendController extends GetxController {
   List<String> urlList = [
-    "assets/trend1.png",
+    "assets/img.png",
     "assets/trend2.png",
     "assets/trend3.png",
   ];

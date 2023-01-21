@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/constants.dart';
 import '../controllers/button_state_controller.dart';
 import '../controllers/toptrend_controller.dart';
+import '../widgets/comment_widget.dart';
 import '../widgets/custom_function_button.dart';
 import '../widgets/new_feed_container.dart';
 import 'notification_screen.dart';
@@ -63,21 +64,41 @@ class OtherTrendingScreen extends StatelessWidget {
                     width: 20.w,
                   ),
                   InkWell(
-                    onTap: () {},
-                    child: Container(
-                        height: 24.h,
-                        width: 32.w,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: buttonGrdient,
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter),
-                            borderRadius: BorderRadius.circular(20.r)),
-                        child: Icon(
-                          Icons.share,
-                          size: 15.r,
-                          color: Colors.white,
-                        )),
+                    onTap: () {
+                      if (!toptrenController.sharePost) {
+                        toptrenController.sharePost = true;
+                        toptrenController.update();
+                      }
+                    },
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 7.h,
+                        ),
+                        Container(
+                            height: 20.h,
+                            width: 32.w,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: buttonGrdient,
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter),
+                                borderRadius:
+                                BorderRadius.circular(20.r)),
+                            child: Icon(
+                              Icons.share,
+                              size: 12.r,
+                              color: Colors.white,
+                            )),
+                        Text(
+                          "16 k",
+                          style: GoogleFonts.poppins(
+                              fontSize: 7.sp,
+                              color: Colors.white,
+                              decoration: TextDecoration.none),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: 5.w,
@@ -133,9 +154,8 @@ class OtherTrendingScreen extends StatelessWidget {
                 GetBuilder<TopTrendController>(
                   builder: (context) {
                     return NewFeedContainer(
-                      image: toptrenController.urlList[toptrenController.index],
                       width: 359.w,
-                      height: 447.h,
+                      height: 350.h,
                     );
                   }
                 ),
@@ -145,14 +165,14 @@ class OtherTrendingScreen extends StatelessWidget {
               height: 10.h,
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(top: 5.h,bottom: 10.h),
               child: GetBuilder<ButtonStateController>(builder: (context) {
                 return Container(
                   width: 300.w,
                   child: Row(
                     children: [
                       CustomFunctionButton(
-                          height: 30.h,
+                          height: 35.h,
                           width: 49.w,
                           customIcon: Icons.thumb_up,
                           IconColor: buttonStateController.isLiked
@@ -167,7 +187,7 @@ class OtherTrendingScreen extends StatelessWidget {
                             print(buttonStateController.isLiked);
                           }),
                       CustomFunctionButton(
-                          height: 30.h,
+                          height: 35.h,
                           width: 49.w,
                           customIcon: Icons.thumb_down,
                           IconColor: buttonStateController.isDisliked
@@ -181,7 +201,7 @@ class OtherTrendingScreen extends StatelessWidget {
                             buttonStateController.update();
                           }),
                       CustomFunctionButton(
-                          height: 30.h,
+                          height: 35.h,
                           width: 49.w,
                           customIcon: Icons.chat_bubble,
                           IconColor: buttonStateController.openComment
@@ -196,7 +216,7 @@ class OtherTrendingScreen extends StatelessWidget {
                           }),
                       Expanded(child: Container()),
                       CustomFunctionButton(
-                          height: 30.h,
+                          height: 35.h,
                           width: 49.w,
                           customIcon: Icons.repeat,
                           IconColor: buttonStateController.isRetweeted
@@ -210,7 +230,7 @@ class OtherTrendingScreen extends StatelessWidget {
                             buttonStateController.update();
                           }),
                       CustomFunctionButton(
-                          height: 30.h,
+                          height: 35.h,
                           width: 49.w,
                           customIcon: Icons.share,
                           IconColor: buttonStateController.share
@@ -229,132 +249,12 @@ class OtherTrendingScreen extends StatelessWidget {
               }),
             ),
             /*Comment area */
-
             GetBuilder<ButtonStateController>(builder: (context) {
               return buttonStateController.openComment
-                  ? Container(
-                height: 250.h,
-                width: 240.w,
-                decoration: BoxDecoration(
-                    color: Color(0xff282828),
-                    borderRadius: BorderRadius.circular(10.r)),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.r),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundImage:
-                            AssetImage("assets/image2.png"),
-                            radius: 20.r,
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Ann Marie",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 12.sp,
-                                    color: Color(0xff888787),
-                                    decoration: TextDecoration.none),
-                              ),
-                              Text(
-                                "Hi I love this",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 12.sp,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none),
-                              ),
-                            ],
-                          ),
-                          Expanded(child: Container()),
-                          Icon(
-                            Icons.more_vert_outlined,
-                            size: 20.r,
-                            color: Color(0xFF5F6368),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      color: Colors.white60,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.r),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundImage:
-                            AssetImage("assets/image2.png"),
-                            radius: 20.r,
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Ann Marie",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 12.sp,
-                                    color: Color(0xff888787),
-                                    decoration: TextDecoration.none),
-                              ),
-                              Text(
-                                "Hi I love this",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 12.sp,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none),
-                              ),
-                            ],
-                          ),
-                          Expanded(child: Container()),
-                          Icon(
-                            Icons.more_vert_outlined,
-                            size: 20.r,
-                            color: Color(0xFF5F6368),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      color: Colors.white60,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.r),
-                      child: Container(
-                        height: 50.h,
-                        child: TextFormField(
-                          cursorColor: Colors.white60,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                          ),
-                          decoration: InputDecoration(
-                            hintText:  "Write your Comment here",
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.transparent),
-                            ),
-                            hintStyle: TextStyle(
-                              fontSize: 12.sp,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              )
+                  ? CommentWidget(toptrenController)
                   : Container();
-            })
+            }),
+
           ],
         ),
       ),

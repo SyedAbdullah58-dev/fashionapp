@@ -33,7 +33,6 @@ class TopTrendingScreen extends StatelessWidget {
         children: [
           Container(
             height: Get.height,
-           
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -86,20 +85,35 @@ class TopTrendingScreen extends StatelessWidget {
                               toptrenController.update();
                             }
                           },
-                          child: Container(
-                              height: 24.h,
-                              width: 32.w,
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                      colors: buttonGrdient,
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter),
-                                  borderRadius: BorderRadius.circular(20.r)),
-                              child: Icon(
-                                Icons.share,
-                                size: 15.r,
-                                color: Colors.white,
-                              )),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 7.h,
+                              ),
+                              Container(
+                                  height: 20.h,
+                                  width: 32.w,
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          colors: buttonGrdient,
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter),
+                                      borderRadius:
+                                          BorderRadius.circular(20.r)),
+                                  child: Icon(
+                                    Icons.share,
+                                    size: 12.r,
+                                    color: Colors.white,
+                                  )),
+                              Text(
+                                "16 k",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 7.sp,
+                                    color: Colors.white,
+                                    decoration: TextDecoration.none),
+                              )
+                            ],
+                          ),
                         ),
                         SizedBox(
                           width: 5.w,
@@ -260,7 +274,6 @@ class TopTrendingScreen extends StatelessWidget {
                     }),
                   ),
                   /*Comment area */
-
                   GetBuilder<ButtonStateController>(builder: (context) {
                     return buttonStateController.openComment
                         ? CommentWidget(toptrenController)
@@ -433,9 +446,11 @@ class TopTrendingScreen extends StatelessWidget {
                                                 gradient: LinearGradient(
                                                     colors: buttonGrdient,
                                                     begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter),
+                                                    end:
+                                                        Alignment.bottomCenter),
                                                 borderRadius:
-                                                    BorderRadius.circular(20.r)),
+                                                    BorderRadius.circular(
+                                                        20.r)),
                                             child: Icon(
                                               Icons.whatsapp,
                                               size: 28.r,
@@ -466,9 +481,11 @@ class TopTrendingScreen extends StatelessWidget {
                                                 gradient: LinearGradient(
                                                     colors: buttonGrdient,
                                                     begin: Alignment.topCenter,
-                                                    end: Alignment.bottomCenter),
+                                                    end:
+                                                        Alignment.bottomCenter),
                                                 borderRadius:
-                                                    BorderRadius.circular(20.r)),
+                                                    BorderRadius.circular(
+                                                        20.r)),
                                             child: Icon(
                                               Icons.facebook_sharp,
                                               size: 15.r,

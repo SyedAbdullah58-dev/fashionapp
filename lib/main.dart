@@ -1,6 +1,7 @@
 
 
 import 'package:fashionapp/home/chat_screen.dart';
+import 'package:fashionapp/home/home_screen.dart';
 import 'package:fashionapp/views/ApplyJob/filter_screen.dart';
 import 'package:fashionapp/views/ApplyJob/links_screen.dart';
 import 'package:fashionapp/views/celebrity/select_celebrity_screen.dart';

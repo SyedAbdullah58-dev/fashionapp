@@ -74,7 +74,7 @@ class OTPVerification extends StatelessWidget {
                   width: 61.w,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          colors: gradientColor
+                          colors: gradientColor,begin: Alignment.topCenter,end: Alignment.bottomCenter
                       ),
                       borderRadius: BorderRadius.circular(15.r)),
                 ),
@@ -96,7 +96,7 @@ class OTPVerification extends StatelessWidget {
                   width: 61.w,
                   decoration: BoxDecoration(
     gradient: LinearGradient(
-    colors: gradientColor
+    colors: gradientColor,begin: Alignment.topCenter,end: Alignment.bottomCenter
     ),
                       borderRadius: BorderRadius.circular(15.r)),
                 ),
@@ -118,7 +118,7 @@ class OTPVerification extends StatelessWidget {
                   width: 61.w,
                   decoration: BoxDecoration(
     gradient: LinearGradient(
-    colors: gradientColor
+    colors: gradientColor,begin: Alignment.topCenter,end: Alignment.bottomCenter
     ),
                       borderRadius: BorderRadius.circular(15.r)),
                 ),
@@ -146,7 +146,7 @@ class OTPVerification extends StatelessWidget {
                   width: 61.w,
                   decoration: BoxDecoration(
     gradient: LinearGradient(
-    colors: gradientColor
+    colors: gradientColor,begin: Alignment.topCenter,end: Alignment.bottomCenter
     ),
                       borderRadius: BorderRadius.circular(15.r)),
                 ),

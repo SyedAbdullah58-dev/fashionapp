@@ -15,11 +15,11 @@ import '../utils/constants.dart';
 
 Widget CommentWidget(TopTrendController toptrendController){
   return Container(
-    height: 250.h,
-    width: 240.w,
+
+    width: 290.w,
     decoration: BoxDecoration(
         color: Color(0xff282828),
-        borderRadius: BorderRadius.circular(10.r)),
+        borderRadius: BorderRadius.circular(10.r),border: Border.all(color: Color(0xff888787),width: 0.5.r)),
     child: SingleChildScrollView(
       child: Column(
         children: [
@@ -31,34 +31,44 @@ GetBuilder<TopTrendController>(
 
           /*Commenting field*/
           Padding(
-            padding: EdgeInsets.all(8.r),
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
             child: Container(
-              height: 80.h,
+alignment: Alignment.center,
 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  TextFormField(
-                    controller: toptrendController.commentController,
-                    onChanged: (commentController){
+                  Container(
+                    alignment: Alignment.center,
+                    height: 50.h,
+
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20.w),
+                      child: TextFormField(
+                        controller: toptrendController.commentController,
+                        onChanged: (commentController){
 toptrendController.update();
-                    },
-                    cursorColor: Colors.white60,
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.white,
-                    ),
-                    decoration: InputDecoration(
-                      hintText:  "Write your Comment here",
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                      ),
-                      hintStyle: TextStyle(
-                        fontSize: 12.sp,
-                        color: Colors.white,
+                        },
+                        cursorColor: Colors.white60,
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          color:Colors.white,
+                        ),
+                        decoration: InputDecoration(
+                          hintText:  "Type Your Comment Here...",
+
+
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                          hintStyle: TextStyle(
+                            fontSize: 12.sp,
+                            color: Color(0xff888787),
+                          ),
+                        ),
                       ),
                     ),
                   ),

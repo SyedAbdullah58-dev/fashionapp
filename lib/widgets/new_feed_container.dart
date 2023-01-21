@@ -12,10 +12,12 @@ Widget NewFeedContainer({image,height,width,radius}){
         Container(
           width: width,
           height: height,
+
           alignment: Alignment.center,
           decoration: BoxDecoration(
+              color: Colors.blue,
               image:
-              DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
+              DecorationImage(image: AssetImage(image==null?"":image), fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(20.r)
           ),
         ),
