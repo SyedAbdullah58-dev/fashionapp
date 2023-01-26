@@ -24,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         body: Column(children: [
           Padding(
-            padding: EdgeInsets.only(top: 50.h, left: 20.w),
+            padding: EdgeInsets.only(top: 70.h, left: 20.w),
             child: Row(
               children: [
                 GestureDetector(
@@ -112,11 +112,11 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 CustomTextFormField(
-                  controller: loginSignupController.fullName,
+                  controller: loginSignupController.full_name,
                   hinttext: "Asim Ahmed",
                 ),
                 if (loginSignupController.createAccount)
-                  loginSignupController.fullName.text == ""
+                  loginSignupController.full_name.text == ""
                       ? ErrorText(text: "Full Name required")
                       : Container(),
                 SizedBox(
@@ -155,11 +155,12 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 CustomTextFormField(
-                  controller: loginSignupController.mobileNumber,
+                  controller: loginSignupController.mobile_number,
                   hinttext: "Mobile Number",
+                  keyboardType: TextInputType.number
                 ),
                 if (loginSignupController.createAccount)
-                  loginSignupController.mobileNumber.text == ""
+                  loginSignupController.mobile_number.text == ""
                       ? ErrorText(text: "Mobile Number required")
                       : Container(),
                 SizedBox(
@@ -185,7 +186,7 @@ class SignUpScreen extends StatelessWidget {
                       ? ErrorText(text: "Password required")
                       : Container(),
                 SizedBox(
-                  height: 60.h,
+                  height: 40.h,
                 ),
                 CustomButton(
                     height: 59.h,
@@ -194,17 +195,16 @@ class SignUpScreen extends StatelessWidget {
                     function: () {
                       loginSignupController.createAccount = true;
                       loginSignupController.update();
-                      if (loginSignupController.fullName.text != "" &&
+                      if (loginSignupController.full_name.text != "" &&
                           loginSignupController.email.text != "" &&
                           loginSignupController.password.text != "" &&
-                          loginSignupController.mobileNumber.text != "") {
-                        loginSignupController.fullName.clear();
-                        loginSignupController.email.clear();
-                        loginSignupController.password.clear();
-                        loginSignupController.mobileNumber.clear();
+                          loginSignupController.mobile_number.text != "") {
+                        loginSignupController.CreateUser();
                         loginSignupController.createAccount = false;
-                        Get.to(() => LoginScreen());
+
                       }
+                      else {return;}
+
                     }),
                 SizedBox(
                   height: 20.h,

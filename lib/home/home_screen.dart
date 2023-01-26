@@ -7,6 +7,7 @@ import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/home/toptrending_screen.dart';
+import 'package:fashionapp/views/login/Login_screen.dart';
 import 'package:fashionapp/views/login/signup_screen.dart';
 import 'package:fashionapp/widgets/custom_function_button.dart';
 import 'package:fashionapp/widgets/new_feed_container.dart';
@@ -27,7 +28,7 @@ import '../widgets/custom_text.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreenController homeScreenController = Get.put(HomeScreenController());
   LoginSignupController loginSignupController =
-      Get.put(LoginSignupController());
+      Get.find<LoginSignupController>();
   ButtonStateController buttonStateController =
       Get.put(ButtonStateController());
 
@@ -120,6 +121,8 @@ class HomeScreen extends StatelessWidget {
                         Expanded(child: Container()),
                         GestureDetector(
                           onTap: () {
+
+
                             Get.to(() => TopTrendingScreen());
                           },
                           child: Text(
@@ -311,6 +314,12 @@ class HomeScreen extends StatelessWidget {
                                             ? Colors.red
                                             : Colors.white,
                                         function: () {
+                                          if(!loginSignupController.isLoggedIn){
+                                            homeScreenController.showLoginPrompt=true;
+                                            homeScreenController.update();
+                                            return;
+                                          }
+                                          else{
                                           if (!buttonStateController.isLiked)
                                             buttonStateController.isLiked =
                                                 true;
@@ -319,7 +328,7 @@ class HomeScreen extends StatelessWidget {
                                                 false;
                                           buttonStateController.update();
                                           print(buttonStateController.isLiked);
-                                        }),
+                                        }}),
                                     SizedBox(
                                       width: 5.h,
                                     ),
@@ -332,6 +341,11 @@ class HomeScreen extends StatelessWidget {
                                                 ? Colors.red
                                                 : Colors.white,
                                         function: () {
+                                          if(!loginSignupController.isLoggedIn){
+                                            homeScreenController.showLoginPrompt=true;
+                                            homeScreenController.update();
+                                            return;
+                                          }else{
                                           if (!buttonStateController.isDisliked)
                                             buttonStateController.isDisliked =
                                                 true;
@@ -339,7 +353,7 @@ class HomeScreen extends StatelessWidget {
                                             buttonStateController.isDisliked =
                                                 false;
                                           buttonStateController.update();
-                                        }),
+                                        }}),
                                     SizedBox(
                                       width: 5.h,
                                     ),
@@ -352,6 +366,11 @@ class HomeScreen extends StatelessWidget {
                                                 ? Colors.red
                                                 : Colors.white,
                                         function: () {
+                                          if(!loginSignupController.isLoggedIn){
+                                            homeScreenController.showLoginPrompt=true;
+                                            homeScreenController.update();
+                                            return;
+                                          }else{
                                           if (!buttonStateController
                                               .openComment)
                                             buttonStateController.openComment =
@@ -360,7 +379,7 @@ class HomeScreen extends StatelessWidget {
                                             buttonStateController.openComment =
                                                 false;
                                           buttonStateController.update();
-                                        }),
+                                        }}),
                                     Expanded(child: Container()),
                                     CustomFunctionButton(
                                         height: 37.h,
@@ -371,6 +390,11 @@ class HomeScreen extends StatelessWidget {
                                                 ? Colors.red
                                                 : Colors.white,
                                         function: () {
+                                          if(!loginSignupController.isLoggedIn){
+                                            homeScreenController.showLoginPrompt=true;
+                                            homeScreenController.update();
+                                            return;
+                                          }else{
                                           if (!buttonStateController
                                               .isRetweeted)
                                             buttonStateController.isRetweeted =
@@ -379,7 +403,7 @@ class HomeScreen extends StatelessWidget {
                                             buttonStateController.isRetweeted =
                                                 false;
                                           buttonStateController.update();
-                                        }),
+                                        }}),
                                     SizedBox(width: 5.h,),
                                     CustomFunctionButton(
                                         height: 37.h,
@@ -388,7 +412,14 @@ class HomeScreen extends StatelessWidget {
                                         IconColor: buttonStateController.share
                                             ? Colors.red
                                             : Colors.white,
-                                        function: () {}),
+                                        function: () {
+                                          if(!loginSignupController.isLoggedIn){
+                                            homeScreenController.showLoginPrompt=true;
+                                            homeScreenController.update();
+                                            return;
+                                          }
+
+                                        }),
                                   ],
                                 ),
                               );
@@ -500,7 +531,7 @@ class HomeScreen extends StatelessWidget {
                             width: 300.w,
                             text: "Log in",
                             function: () {
-                              Get.to(() => SignUpScreen());
+                              Get.to(() => LoginScreen());
                             }),
                         SizedBox(
                           height: 10.h,

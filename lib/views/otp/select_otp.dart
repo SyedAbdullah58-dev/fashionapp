@@ -21,7 +21,7 @@ class SelectOtp extends StatelessWidget {
         backgroundColor: Colors.black,
         body: Column(children: [
           Padding(
-            padding: EdgeInsets.only(top: 50.h, left: 20.w),
+            padding: EdgeInsets.only(top: 70.h, left: 20.w),
             child: Row(
               children: [
                 GestureDetector(
@@ -32,7 +32,7 @@ class SelectOtp extends StatelessWidget {
                     child: Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
-                      size: 30.r,
+                      size: 25.r,
                     ),
                   ),
 
@@ -40,7 +40,7 @@ class SelectOtp extends StatelessWidget {
                 SizedBox(width: 10.w,),
 
                 Text("OTP Verification",style:GoogleFonts.poppins(
-                    fontSize: 26.sp,
+                    fontSize: 24.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     wordSpacing: 1.sp,

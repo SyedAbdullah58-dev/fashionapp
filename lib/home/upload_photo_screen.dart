@@ -164,7 +164,14 @@ class UploadPhotoScreen extends StatelessWidget {
                       height: 20.h,
                     ),
                     InkWell(
-                        onTap: () {},
+                        onTap: () async {
+                          ImagePicker picker = ImagePicker();
+                          var pic = await picker.pickVideo(
+                              source: ImageSource.gallery);
+                          File file = new File(pic!.path);
+                          toptrendController.picker = file;
+                          toptrendController.update();
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           height: 62.h,
@@ -198,49 +205,13 @@ class UploadPhotoScreen extends StatelessWidget {
                     SizedBox(
                       height: 20.h,
                     ),
-                    InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 62.h,
-                          width: 300.w,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15.r),
-                              color: Color(0xff282828)),
-                          child: Padding(
-                            padding: EdgeInsets.all(10.r),
-                            child: Row(
-                              children: [
-                                //  ImageIcon(AssetImage("assets/addpic.png",),color: Colors.white,size: 27.r,),
-                                ImageIcon(
-                                  AssetImage(
-                                    "assets/page.png",
-                                  ),
-                                  color: Colors.white,
-                                  size: 27.r,
-                                ),
-                                SizedBox(
-                                  width: 20.w,
-                                ),
-                                Text(
-                                  "Documents",
-                                  style: textStyle,
-                                ),
-                                Expanded(
-                                  child: Container(),
-                                ),
-                                Icon(Icons.arrow_forward_ios,
-                                    color: Colors.white, size: 27.r)
-                              ],
-                            ),
-                          ),
-                        )),
+
                     SizedBox(
                       height: 20.h,
                     ),
                     Container(
                       alignment: Alignment.center,
-                      height: 82.h,
+                      height: 100.h,
                       width: 300.w,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.r),

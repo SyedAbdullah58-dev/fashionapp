@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         body: Column(children: [
           Padding(
-            padding: EdgeInsets.only(top: 50.h, left: 20.w),
+            padding: EdgeInsets.only(top: 70.h, left: 20.w),
             child: Row(
               children: [
                 GestureDetector(
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   "Log in",
                   style: GoogleFonts.poppins(
-                      fontSize: 26.sp,
+                      fontSize: 22.sp,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       wordSpacing: 1.sp,

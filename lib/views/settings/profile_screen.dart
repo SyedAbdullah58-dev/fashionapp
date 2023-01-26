@@ -1,8 +1,10 @@
+import 'package:fashionapp/controllers/profile_controller.dart';
 import 'package:fashionapp/utils/constants.dart';
 import 'package:fashionapp/views/ApplyJob/applyjob_screen.dart';
 import 'package:fashionapp/views/Friends/favourites_screen.dart';
 import 'package:fashionapp/views/Friends/friends_screen.dart';
 import 'package:fashionapp/views/settings/profile_setting_screen.dart';
+import 'package:fashionapp/views/splashscreens/splash_screen.dart';
 import 'package:fashionapp/widgets/profile_options.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,7 @@ import '../../controllers/job_apply_controller.dart';
 class ProfileScreen extends StatelessWidget {
 
   final panelController= PanelController();
+  ProfileController profileController=Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){Get.offAll(SplashScreen());},
                     child: Container(
                       alignment: Alignment.center,
                       height: 55.h,
@@ -94,153 +97,209 @@ class ProfileScreen extends StatelessWidget {
           ),
           minHeight: 0.h,
           maxHeight: 276.h,
-          body:Column(
+          body:Stack(
+            alignment: Alignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 50.h, left: 20.w, right: 10.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Builder(builder: (context) {
-                      return GestureDetector(
-                        onTap: () {
-                          Get.back();
-                        },
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 29.r,
-                          color: Colors.white,
-                        ),
-                      );
-                    }),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: 237.w,
-                      height: 35.h,
-                      child: Text(
-                        "Profile",
-                        style: GoogleFonts.poppins(
-                            fontSize: 17.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            wordSpacing: 1.sp,
-                            decoration: TextDecoration.none),
-                      ),
-                    ),
-                    Expanded(child: Container())
-                  ],
-                ),
-              ),
-              SizedBox(height: 30.h),
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/zain.png"),
-                radius: 50.r,
-              ),
-              SizedBox(height: 10.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
-                  Text("Feroz Khan",
+                  Padding(
+                    padding: EdgeInsets.only(top: 50.h, left: 20.w, right: 10.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Builder(builder: (context) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              size: 29.r,
+                              color: Colors.white,
+                            ),
+                          );
+                        }),
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          width: 237.w,
+                          height: 35.h,
+                          child: Text(
+                            "Profile",
+                            style: GoogleFonts.poppins(
+                                fontSize: 17.sp,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                wordSpacing: 1.sp,
+                                decoration: TextDecoration.none),
+                          ),
+                        ),
+                        Expanded(child: Container())
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+                  CircleAvatar(
+                    backgroundImage: AssetImage("assets/zain.png"),
+                    radius: 50.r,
+                  ),
+                  SizedBox(height: 10.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Feroz Khan",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              wordSpacing: 1.sp,
+                              decoration: TextDecoration.none)),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      ImageIcon(
+                        AssetImage("assets/tick.png"),
+                        color: Color(0xff4F48FF),
+                        size: 15.r,
+                      ),
+                    ],
+                  ),
+                  Text("Islamabad,Pakistan",
                       style: GoogleFonts.poppins(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          fontSize: 12.sp,
+                          color: Colors.white60,
                           wordSpacing: 1.sp,
                           decoration: TextDecoration.none)),
                   SizedBox(
-                    width: 5.w,
+                    height: 30.h,
                   ),
-                  ImageIcon(
-                    AssetImage("assets/tick.png"),
-                    color: Color(0xff4F48FF),
-                    size: 15.r,
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30.w),
+                        child: Text("Account Settings",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16.sp,
+                                color: Colors.white,
+                                wordSpacing: 1.sp,
+                                decoration: TextDecoration.none)),
+                      ),
+                    ],
                   ),
+                  ProfileOptions(
+                      optIcon: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                        size: 30.r,
+                      ),
+                      onTap: () {
+                       profileController.openFeaturePrompt=true;
+                       profileController.update();
+                        //Get.to(() => ProfileSettingScreen());
+                      },
+                      optTitle: "Settings"),
+                  ProfileOptions(
+                      onTap: () {
+                        profileController.openFeaturePrompt=true;
+                        profileController.update();
+                      //  Get.to(() => ApplyJobScreen());
+                      },
+                      optIcon: Icon(
+                        Icons.location_on_outlined,
+                        color: Colors.white,
+                        size: 30.r,
+                      ),
+                      optTitle: "Post job"),
+                  ProfileOptions(
+                      optIcon: Icon(
+                        Icons.person_pin_outlined,
+                        color: Colors.white,
+                        size: 30.r,
+                      ),
+                      onTap: () {
+                        profileController.openFeaturePrompt=true;
+                        profileController.update();
+                       // Get.to(() => FriendsScreen());
+
+                      },
+                      optTitle: "Friends"),
+                  ProfileOptions(
+                    optIcon: Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.white,
+                      size: 30.r,
+                    ),
+                    optTitle: "Favourites",
+                    onTap: () {
+                      profileController.openFeaturePrompt=true;
+                      profileController.update();
+                    //  Get.to(() => FavouritesScreen());
+
+                    },
+                  ),
+
+                  ProfileOptions(
+                    onTap: (){
+                      profileController.openFeaturePrompt=true;
+                      profileController.update();
+                    },
+                      optIcon: Icon(
+                        Icons.chat_outlined,
+                        color: Colors.white,
+                        size: 30.r,
+                      ),
+                      optTitle: "Chat and helps"),
+                  ProfileOptions(
+                    onTap: (){panelController.open();},
+                      optIcon: Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                        size: 30.r,
+                      ),
+                      optTitle: "Logout"),
                 ],
               ),
-              Text("Islamabad,Pakistan",
-                  style: GoogleFonts.poppins(
-                      fontSize: 12.sp,
-                      color: Colors.white60,
-                      wordSpacing: 1.sp,
-                      decoration: TextDecoration.none)),
-              SizedBox(
-                height: 30.h,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Text("Account Settings",
-                        style: GoogleFonts.poppins(
-                            fontSize: 16.sp,
-                            color: Colors.white,
-                            wordSpacing: 1.sp,
-                            decoration: TextDecoration.none)),
-                  ),
-                ],
-              ),
-              ProfileOptions(
-                  optIcon: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 30.r,
-                  ),
-                  onTap: () {
-                    Get.to(() => ProfileSettingScreen());
-                  },
-                  optTitle: "Settings"),
-              ProfileOptions(
-                  onTap: () {
-                    Get.to(() => ApplyJobScreen());
-                  },
-                  optIcon: Icon(
-                    Icons.location_on_outlined,
-                    color: Colors.white,
-                    size: 30.r,
-                  ),
-                  optTitle: "Post job"),
-              ProfileOptions(
-                  optIcon: Icon(
-                    Icons.person_pin_outlined,
-                    color: Colors.white,
-                    size: 30.r,
-                  ),
-                  onTap: () {
-                    Get.to(() => FriendsScreen());
-
-                  },
-                  optTitle: "Friends"),
-              ProfileOptions(
-                optIcon: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Colors.white,
-                  size: 30.r,
-                ),
-                optTitle: "Favourites",
-                onTap: () {
-                  Get.to(() => FavouritesScreen());
-
-                },
-              ),
-
-              ProfileOptions(
-                  optIcon: Icon(
-                    Icons.chat_outlined,
-                    color: Colors.white,
-                    size: 30.r,
-                  ),
-                  optTitle: "Chat and helps"),
-              ProfileOptions(
-                onTap: (){panelController.open();},
-                  optIcon: Icon(
-                    Icons.logout,
-                    color: Colors.white,
-                    size: 30.r,
-                  ),
-                  optTitle: "Logout"),
+              GetBuilder<ProfileController>(
+                  builder: (context) {
+                    return profileController.openFeaturePrompt?Container(
+                      alignment: Alignment.center,
+                      height: 159.h,
+                      width: 340.w,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          gradient: LinearGradient(
+                              colors: gradientColor,
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "This feature will be available soon \n"
+                                "Stay Tuned!",
+                            textAlign: TextAlign.center,
+                            style: textStyle,
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          GestureDetector(
+                              onTap: () {
+                                profileController.openFeaturePrompt = false;
+                                profileController.update();
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: Colors.white,
+                                size: 25.r,
+                              )),
+                        ],
+                      ),
+                    ):Container();
+                  }
+              )
             ],
           ),
       ),

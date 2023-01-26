@@ -1,3 +1,4 @@
+import 'package:fashionapp/controllers/login_signup_controller.dart';
 import 'package:fashionapp/controllers/onboarding_controller.dart';
 import 'package:fashionapp/home/navbar_screen.dart';
 import 'package:fashionapp/views/login/signup_screen.dart';
@@ -12,6 +13,7 @@ import '../../utils/constants.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingController onboardingController = Get.put(OnboardingController());
+  LoginSignupController loginSignupController=Get.put(LoginSignupController());
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +125,8 @@ class OnboardingScreen extends StatelessWidget {
                       width: 289.w,
                       text: "Continue With Login",
                       function: () {
+                        loginSignupController.isLoggedIn=true;
+                        loginSignupController.update();
                         if (onboardingController.acceptTerm)
                           Get.to(SignUpScreen());
                         else {
@@ -138,6 +142,8 @@ class OnboardingScreen extends StatelessWidget {
                       width: 289.w,
                       text: "Continue Without Login",
                       function: () {
+                        loginSignupController.isLoggedIn=false;
+                        loginSignupController.update();
                         if (onboardingController.acceptTerm)
                           Get.to(() => NavbarScreen());
                         else {
